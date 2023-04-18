@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('express-async-errors');
 const notFound = require('./middleware/notFound')
 const taskRoute = require('./routes/task')
 const connectDB = require('./config/db')
@@ -13,7 +14,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/v1/task', taskRoute)
 // error page not found
-// app.use(notFound);
+app.use(notFound);
 
 const start = async () => {
     try {

@@ -1,11 +1,12 @@
 const {StatusCodes} = require('http-status-codes');
 const CustomError = require('./customError')
-class BadRequestError extends CustomError {
+
+class notFound extends CustomError {
     constructor(message) {
         super(message);
-        this.statusCode = StatusCodes.BAD_REQUEST;
+        this.statusCode = StatusCodes.NOT_FOUND;
     }
 }
 
 
-module.exports = BadRequestError
+module.exports = notFound
