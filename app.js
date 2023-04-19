@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('express-async-errors');
 const notFound = require('./middleware/notFound')
+const errorHandler = require('./middleware/errorHandler')
 const taskRoute = require('./routes/task')
 const connectDB = require('./config/db')
 require('dotenv').config()
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/v1/task', taskRoute)
 // error page not found
+app.use(errorHandler);
 app.use(notFound);
 
 const start = async () => {

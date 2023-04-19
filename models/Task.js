@@ -9,7 +9,11 @@ const taskSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now()
-    }
+    },
+    // userId: {
+    //     type: mongoose.Types.ObjectId,
+    //     ref: 'User'
+    // }
 
 })
 

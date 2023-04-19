@@ -1,6 +1,7 @@
 const BadRequest = require('./badRequest');
 const NotFound = require('./notFound');
 const Unauthourized = require('./unauthourized');
+const InternalServerError = require('./InternalServerError');
 
 
 
@@ -8,5 +9,6 @@ const Unauthourized = require('./unauthourized');
 module.exports = {
     BadRequest,
     NotFound,
-    Unauthourized
+    Unauthourized,
+    // InternalServerError
 }
